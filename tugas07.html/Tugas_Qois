@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeTIK Jombang - Informasi Seputar Pendidikan Vokasi TI</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Devicon & FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#061a2f',
+              blue: '#0d3859',
+              teal: '#0a6c74',
+              emerald: '#05545a',
+              accent: '#38bdf8',
+              mint: '#34d399',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Gradient Background Dominan Biru ke Hijau */
+    body {
+      background: linear-gradient(135deg, #061a32 0%, #0c3b5d 35%, #0b5969 70%, #064e43 100%);
+      min-height: 100vh;
+      color: #f1f5f9;
+    }
+
+    /* Efek Card Glassmorphism Lembut & Elegan */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    .glass-sidebar {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Efek Kilau / Glow Halus */
+    .glow-cyan {
+      box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.35);
+    }
+
+    /* Efek Refleksi Elegan pada Bagian Bawah */
+    .mirror-reflection {
+      position: relative;
+      -webkit-box-reflect: below 2px linear-gradient(to bottom, rgba(0,0,0,0) 65%, rgba(255,255,255,0.18) 100%);
+    }
+
+    /* Smooth Hover Transition */
+    .nav-link-transition {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="flex flex-col justify-between antialiased selection:bg-teal-500 selection:text-white p-3 sm:p-6 md:p-8">
+
+  <!-- Container Utama dengan Frame Reflektif & Melengkung Mewah -->
+  <div class="max-w-7xl mx-auto w-full flex flex-col min-h-[92vh] rounded-3xl shadow-2xl border border-white/15 overflow-hidden backdrop-blur-md bg-gradient-to-b from-slate-900/40 via-cyan-950/20 to-emerald-950/40">
+
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header class="w-full px-6 sm:px-10 py-5 flex items-center justify-between border-b border-white/10 bg-white/5 backdrop-blur-lg">
+      <!-- Logo PeTIK Jombang -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-cyan-500 to-teal-400 p-[2px] shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-full bg-[#061a32] rounded-[14px] flex items-center justify-center text-cyan-400 text-xl font-black">
+            <i class="fa-solid fa-infinity text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-300"></i>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-bold tracking-tight text-white group-hover:text-cyan-300 transition-colors">
+            PeTIK <span class="font-light text-cyan-300/90">Jombang</span>
+          </span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-teal-300/70 -mt-1">
+            Pesantren Teknologi Informasi
+          </span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Atas -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-medium text-slate-200 hover:text-cyan-300 nav-link-transition hover:-translate-y-0.5">About</a>
+        <a href="#blog" class="text-sm font-medium text-slate-200 hover:text-cyan-300 nav-link-transition hover:-translate-y-0.5">Blog</a>
+        <a href="#shop" class="text-sm font-medium text-slate-200 hover:text-cyan-300 nav-link-transition hover:-translate-y-0.5">Shop</a>
+        <a href="#contact" class="text-sm font-medium px-4 py-2 rounded-full border border-cyan-400/30 text-cyan-300 hover:bg-cyan-400/10 nav-link-transition hover:border-cyan-300">Contact</a>
+      </nav>
+
+      <!-- Tombol Menu Mobile -->
+      <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg bg-white/5 border border-white/10" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars-staggered text-lg"></i>
+      </button>
+    </header>
+
+    <!-- Menu Mobile Dropdown (Hidden by default) -->
+    <div id="mobileDropdown" class="hidden md:hidden px-6 py-4 bg-slate-900/95 border-b border-white/10 space-y-3">
+      <a href="#about" class="block text-sm font-medium text-slate-200 hover:text-cyan-300">About</a>
+      <a href="#blog" class="block text-sm font-medium text-slate-200 hover:text-cyan-300">Blog</a>
+      <a href="#shop" class="block text-sm font-medium text-slate-200 hover:text-cyan-300">Shop</a>
+      <a href="#contact" class="block text-sm font-medium text-cyan-300">Contact</a>
+    </div>
+
+    <!-- ==================== MAIN CONTENT AREA (3-COLUMN LAYOUT) ==================== -->
+    <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 p-5 sm:p-8 md:p-10 items-stretch">
+      
+      <!-- KOLOM KIRI: Coding & Tech Icons Showcase -->
+      <section class="lg:col-span-3 flex flex-col justify-between glass-sidebar rounded-2xl p-6 sm:p-7 relative overflow-hidden group">
+        <!-- Background Ambient Accent -->
+        <div class="absolute -top-16 -left-16 w-36 h-36 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-16 -right-16 w-36 h-36 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div>
+          <!-- Header Kolom Kiri -->
+          <div class="flex items-center gap-2.5 mb-5 pb-3 border-b border-white/10">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-cyan-300/90">Tech Stack</span>
+          </div>
+
+          <!-- Tech Icons Matrix (Logo-logo Codingan) -->
+          <div class="grid grid-cols-2 gap-3.5 my-4">
+            <!-- HTML5 -->
+            <div class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300 group/icon">
+              <i class="devicon-html5-plain text-3xl text-orange-400 group-hover/icon:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1.5 font-medium text-slate-300">HTML5</span>
+            </div>
+
+            <!-- CSS3 -->
+            <div class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-blue-400/50 hover:bg-blue-500/10 transition-all duration-300 group/icon">
+              <i class="devicon-css3-plain text-3xl text-blue-400 group-hover/icon:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1.5 font-medium text-slate-300">CSS3</span>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-yellow-400/50 hover:bg-yellow-500/10 transition-all duration-300 group/icon">
+              <i class="devicon-javascript-plain text-3xl text-yellow-300 group-hover/icon:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1.5 font-medium text-slate-300">JavaScript</span>
+            </div>
+
+            <!-- React -->
+            <div class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all duration-300 group/icon">
+              <i class="devicon-react-original text-3xl text-cyan-300 group-hover/icon:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1.5 font-medium text-slate-300">React.js</span>
+            </div>
+
+            <!-- Python -->
+            <div class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-yellow-300/50 hover:bg-sky-500/10 transition-all duration-300 group/icon">
+              <i class="devicon-python-plain text-3xl text-yellow-400 group-hover/icon:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1.5 font-medium text-slate-300">Python</span>
+            </div>
+
+            <!-- PHP / Laravel -->
+            <div class="flex flex-col items-center justify-center p-3.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-indigo-400/50 hover:bg-indigo-500/10 transition-all duration-300 group/icon">
+              <i class="devicon-php-plain text-3xl text-indigo-300 group-hover/icon:scale-110 transition-transform"></i>
+              <span class="text-xs mt-1.5 font-medium text-slate-300">Backend</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caption / Title Bawah -->
+        <div class="pt-5 mt-2 border-t border-white/10 text-center">
+          <div class="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-cyan-400/10 text-cyan-300 border border-cyan-400/20 text-xs font-semibold mb-2">
+            <i class="fa-solid fa-code"></i> Kurikulum Vokasi
+          </div>
+          <h3 class="text-lg font-bold text-white tracking-tight">Belajar Coding & TI</h3>
+          <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+            Mencetak talenta digital berakhlak mulia dan siap kerja di industri modern.
+          </p>
+        </div>
+      </section>
+
+      <!-- KOLOM TENGAH: Card Informasi Utama (Elegan, Classic & Bersih) -->
+      <section class="lg:col-span-7 flex flex-col">
+        <article class="glass-card text-slate-800 rounded-2xl p-6 sm:p-9 md:p-10 shadow-2xl flex-1 flex flex-col justify-between border border-white/80 transition-all duration-300">
+          
+          <div>
+            <!-- Header Artikel -->
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <span class="text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-md bg-teal-50 text-teal-700 border border-teal-200/70">
+                Profil & Program Unggulan
+              </span>
+              <span class="text-xs text-slate-500 flex items-center gap-1.5 font-medium">
+                <i class="fa-regular fa-clock text-teal-600"></i> Beasiswa 1 Tahun
+              </span>
+            </div>
+
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight border-b border-slate-200 pb-4">
+              Informasi Seputar PeTIK Jombang
+            </h1>
+
+            <!-- Konten Paragraf Terstruktur -->
+            <div class="space-y-4 text-sm sm:text-[15px] leading-relaxed text-slate-700 font-normal text-justify">
+              <p>
+                <strong class="text-slate-900 font-semibold">PeTIK Jombang</strong> merupakan lembaga pendidikan vokasi Teknologi Informasi dan Komunikasi yang dipadukan secara harmonis dengan pembelajaran bidang kepesantrenan (Kajian Kitab Kuning) dari para ulama yang memiliki sanad keilmuan yang jelas.
+              </p>
+              
+              <p>
+                Berada di bawah naungan <strong class="text-teal-800 font-semibold">Yayasan Baitul Maal (YBM) PLN</strong>, PeTIK berkomitmen melanjutkan visi dan misi menebarkan manfaat kepada umat seluas-luasnya. Wujud komitmen ini direalisasikan dengan memberikan kesempatan penuh kepada generasi muda dhuafa untuk mengenyam pendidikan teknologi informasi dan komunikasi secara intensif selama 1 (satu) tahun.
+              </p>
+              
+              <div class="p-4 my-2 rounded-xl bg-slate-50 border border-slate-200/80 shadow-sm">
+                <h4 class="text-xs font-bold tracking-wide uppercase text-slate-900 mb-2 flex items-center gap-2">
+                  <i class="fa-solid fa-graduation-cap text-teal-600"></i> Dua Jurusan Unggulan:
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div class="bg-white p-3 rounded-lg border border-slate-200">
+                    <span class="font-bold text-teal-700 block mb-0.5">1. PPL (Pengembangan Perangkat Lunak)</span>
+                    <span class="text-slate-600">Website, Web & Mobile Apps, Database, serta UI/UX Design.</span>
+                  </div>
+                  <div class="bg-white p-3 rounded-lg border border-slate-200">
+                    <span class="font-bold text-teal-700 block mb-0.5">2. DM (Digital Marketing)</span>
+                    <span class="text-slate-600">Online Marketing Tools, Social Ads (IG, FB, TikTok), dan SEO.</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="pt-1 text-slate-700">
+                Di bidang kepesantrenan, mahasantri diajarkan kitab-kitab klasik pilihan seperti <em>Kitab Hadits Arbain, Kitab Kuning Ta’lim Muta’allim, Tauhid (Aqidatul Awam), Fiqih (Safinatunnajah & Fathul Qorib), Tasawuf (Sulam Taufiq & Bidayatul Hidayah), Tafsir (Al Ibris)</em>, serta <em>Nahwu (Jurumiyah)</em>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Footer Badge dalam Card -->
+          <div class="mt-8 pt-4 border-t border-slate-200/80 flex items-center justify-between text-xs text-slate-500 font-medium">
+            <span class="flex items-center gap-2 text-teal-800 font-semibold">
+              <i class="fa-solid fa-shield-halved text-teal-600"></i> 100% Bebas Biaya (Beasiswa Penuh)
+            </span>
+            <span class="hidden sm:inline-block text-slate-400">Jombang, Jawa Timur</span>
+          </div>
+
+        </article>
+      </section>
+
+      <!-- KOLOM KANAN: Navigasi Menu Klasik Bersih -->
+      <aside class="lg:col-span-2 flex flex-col justify-center glass-sidebar rounded-2xl p-6 relative overflow-hidden">
+        <div class="text-xs font-bold uppercase tracking-wider text-teal-300/80 mb-4 pb-2 border-b border-white/10 flex items-center gap-2">
+          <i class="fa-regular fa-compass"></i> Navigasi
+        </div>
+
+        <nav class="flex flex-col gap-2.5">
+          <a href="#" class="group flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cyan-400/40 text-slate-200 hover:text-white nav-link-transition">
+            <span class="font-medium text-sm flex items-center gap-2.5">
+              <i class="fa-solid fa-house-chimney text-xs text-cyan-400 group-hover:scale-110 transition-transform"></i> Beranda
+            </span>
+            <i class="fa-solid fa-chevron-right text-xs opacity-40 group-hover:opacity-100 group-hover:translate-x-1 text-cyan-300 transition-all"></i>
+          </a>
+
+          <a href="#" class="group flex items-center justify-between p-3 rounded-xl bg-white/10 border border-cyan-400/30 text-white shadow-sm shadow-cyan-900/40">
+            <span class="font-medium text-sm flex items-center gap-2.5">
+              <i class="fa-regular fa-newspaper text-xs text-cyan-300"></i> Article
+            </span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          </a>
+
+          <a href="#" class="group flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cyan-400/40 text-slate-200 hover:text-white nav-link-transition">
+            <span class="font-medium text-sm flex items-center gap-2.5">
+              <i class="fa-solid fa-user-plus text-xs text-teal-400 group-hover:scale-110 transition-transform"></i> Pendaftaran
+            </span>
+            <i class="fa-solid fa-chevron-right text-xs opacity-40 group-hover:opacity-100 group-hover:translate-x-1 text-cyan-300 transition-all"></i>
+          </a>
+
+          <a href="#" class="group flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cyan-400/40 text-slate-200 hover:text-white nav-link-transition">
+            <span class="font-medium text-sm flex items-center gap-2.5">
+              <i class="fa-regular fa-images text-xs text-emerald-400 group-hover:scale-110 transition-transform"></i> Galery
+            </span>
+            <i class="fa-solid fa-chevron-right text-xs opacity-40 group-hover:opacity-100 group-hover:translate-x-1 text-cyan-300 transition-all"></i>
+          </a>
+        </nav>
+
+        <!-- Hubungi / Info Tambahan -->
+        <div class="mt-8 pt-4 border-t border-white/10 text-center">
+          <p class="text-[11px] text-slate-400 leading-snug">
+            Butuh bantuan informasi?
+          </p>
+          <a href="#contact" class="inline-block mt-2 text-xs font-semibold text-cyan-300 hover:text-cyan-200 underline underline-offset-4">
+            Hubungi Panitia
+          </a>
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- ==================== FOOTER DENGAN STYLE SLEEK & CLASSIC ==================== -->
+    <footer class="w-full py-4 px-6 text-center border-t border-white/10 bg-slate-950/40 backdrop-blur-md">
+      <p class="text-xs sm:text-sm text-slate-300/90 font-medium tracking-wide">
+        Copyright &copy; 2026 <span class="text-white font-semibold">Programming PeTIK</span>. All Rights Reserved
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Interaktivitas Ringan Menu Mobile -->
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileDropdown = document.getElementById('mobileDropdown');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileDropdown.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
