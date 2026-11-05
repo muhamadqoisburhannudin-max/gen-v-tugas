@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Berlawanan Arah</title>
+    <style>
+        /* Latar belakang utama */
+        body {
+            background-color: #DA1212;
+            margin: 0;
+            overflow-x: hidden; /* Mencegah scrollbar horizontal */
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* 1. Pengaturan Lingkaran Kuning (Bergerak dari Kiri ke Kanan) */
+        .lingkaran-kuning {
+            width: 150px;
+            height: 150px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            /* Panggil animasi jalanDariKiri */
+            animation: jalanDariKiri 8s linear infinite;
+        }
+
+        /* Keyframes untuk lingkaran (Kiri ke Kanan) */
+        @keyframes jalanDariKiri {
+            0% { 
+                /* Mulai dari luar layar sebelah kiri sejauh ukuran lingkarannya */
+                transform: translateX(-150px); 
+            }
+            100% { 
+                /* Berakhir di luar layar sebelah kanan */
+                transform: translateX(100vw); 
+            }
+        }
+
+        /* 2. Pengaturan Teks Berjalan (Bergerak dari Kanan ke Kiri) */
+        .wadah-teks {
+            width: 100%;
+        }
+
+        .teks-berjalan {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            white-space: nowrap;
+            display: inline-block;
+            animation: jalanDariKanan 8s linear infinite;
+        }
+
+        /* Keyframes untuk teks (Kanan ke Kiri) */
+        @keyframes jalanDariKanan {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lingkaran bergerak ke kanan -->
+    <div class="lingkaran-kuning"></div>
+
+    <!-- Teks bergerak ke kiri -->
+    <div class="wadah-teks">
+        <div class="teks-berjalan">selamat belajar transisi & animasi</div>
+    </div>
+
+</body>
+</html>
