@@ -1,5 +1,0 @@
-<script>
-  let alas = 10;
-  let tinggi = 5;
-  alert("Luas Segitiga: " + (0.5 * alas * tinggi));
-</script>
