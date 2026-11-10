@@ -1,0 +1,12 @@
+<script>
+  let input = prompt("Masukkan suhu dalam Celsius (°C):");
+  let celsius = parseFloat(input);
+
+  if (isNaN(celsius)) {
+    alert("Harap masukkan angka yang valid!");
+  } else {
+    // Rumus: (Celsius * 9/5) + 32
+    let fahrenheit = (celsius * 9/5) + 32;
+    alert(celsius + "°C sama dengan " + fahrenheit + "°F");
+  }
+</script>

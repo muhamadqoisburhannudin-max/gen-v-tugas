@@ -1,0 +1,14 @@
+<script>
+  let input = prompt("Masukkan angka yang ingin dicek:");
+  let angka = parseFloat(input);
+
+  if (isNaN(angka)) {
+    alert("Harap masukkan angka yang valid!");
+  } else if (angka > 0) {
+    alert("Angka " + angka + " adalah POSITIF");
+  } else if (angka < 0) {
+    alert("Angka " + angka + " adalah NEGATIF");
+  } else {
+    alert("Angka bernilai NOL");
+  }
+</script>
