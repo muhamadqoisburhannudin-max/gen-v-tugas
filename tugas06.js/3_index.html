@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let nilai = 85;
+let predikat;
+
+if (nilai >= 85 && nilai <= 100) {
+  predikat = "A";
+} else if (nilai >= 70 && nilai < 85) {
+  predikat = "B";
+} else if (nilai >= 55 && nilai < 70) {
+  predikat = "C";
+} else if (nilai >= 0 && nilai < 55) {
+  predikat = "D";
+} else {
+  predikat = "Nilai di luar jangkauan (tidak valid)";
+}
+
+console.log(`Nilai angka: ${nilai}`);
+console.log(`Predikat: ${predikat}`);
+   </script> 
+</body>
+</html>
